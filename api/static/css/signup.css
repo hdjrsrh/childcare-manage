@@ -1,0 +1,194 @@
+/* childcare/api/static/css/signup.css */
+.auth-container {
+    display: flex;
+    height: 90vh;
+}
+
+.auth-left {
+    width: 45%;
+    background: linear-gradient(120deg,  #77d0eb, #dcc66c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.auth-left img {
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+.auth-right {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 55%;
+    overflow-y: auto;
+    max-height: 85vh;
+}
+
+h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+select {
+    cursor: pointer;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.role-specific {
+    display: none;
+}
+
+button {
+    padding: 12px 20px; /* Increased button padding for better click area */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollable form container */
+.auth-right {
+    overflow-y: auto;
+    max-height: 80vh;
+    padding-right: 15px;
+}
+
+/* Added some space between form fields and alerts */
+.alert {
+    margin-bottom: 15px;
+}
+
+/* Adjust the form layout for small screen sizes */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .auth-left {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .auth-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 14px; /* Smaller font size for mobile screens */
+    }
+
+    button {
+        padding: 12px 15px; /* Adjusted button size for smaller screens */
+    }
+}
+
+/* childcare/api/static/css/signup.css */
+.role-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.role-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.role-button:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+}
+
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background-color: #0056b3;
+}

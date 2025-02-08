@@ -1,0 +1,468 @@
+# childcare/api/locale/en/LC_MESSAGES/django.po
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-02 11:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: models.py:7 views.py:16
+msgid "Title"
+msgstr "Title"
+
+#: templates/admin_dashboard.html:6
+msgid "Admin Dashboard"
+msgstr "Admin Dashboard"
+
+#: templates/admin_dashboard.html:10 templates/directrice_dashboard.html:10
+msgid "Manage Accounts"
+msgstr "Manage Accounts"
+
+#: templates/admin_dashboard.html:11 templates/directrice_dashboard.html:11
+msgid "Manage user accounts, roles, and permissions."
+msgstr "Manage user accounts, roles, and permissions."
+
+#: templates/admin_dashboard.html:12 templates/directrice_dashboard.html:12
+msgid "Go to Accounts"
+msgstr "Go to Accounts"
+
+#: templates/assistantes_dashboard.html:6
+msgid "Assistante Dashboard"
+msgstr "Assistant Dashboard"
+
+#: templates/assistantes_dashboard.html:10
+#: templates/assistantes_dashboard.html:12 templates/mark_attendance.html:6
+#: templates/mark_attendance.html:17
+msgid "Mark Attendance"
+msgstr "Mark Attendance"
+
+#: templates/assistantes_dashboard.html:11
+msgid "Record attendance for children and staff."
+msgstr "Record attendance for children and staff."
+
+#: templates/base.html:11
+msgid "Childcare Management"
+msgstr "Childcare Management"
+
+#: templates/base.html:19
+msgid "Home"
+msgstr "Home"
+
+#: templates/base.html:20 templates/login.html:12 templates/login.html:33
+#: templates/signup.html:40 templates/welcome.html:11
+msgid "Login"
+msgstr "Login"
+
+#: templates/base.html:21 templates/signup.html:11 templates/signup.html:37
+msgid "Sign Up"
+msgstr "Sign Up"
+
+#: templates/confirm_delete.html:7
+msgid "Confirm Delete Account"
+msgstr "Confirm Delete Account"
+
+#: templates/confirm_delete.html:8
+msgid "Are you sure you want to delete the account: "
+msgstr "Are you sure you want to delete the account: "
+
+#: templates/confirm_delete.html:11
+msgid "Yes, delete it"
+msgstr "Yes, delete it"
+
+#: templates/confirm_delete.html:13
+msgid "Cancel"
+msgstr "Cancel"
+
+#: templates/create_menu.html:8
+msgid "Établir un Menu Unique"
+msgstr "Create a Unique Menu"
+
+#: templates/create_menu.html:9
+msgid "Création d'un menu fixe et immuable pour l'établissement."
+msgstr "Creation of a fixed and unchangeable menu for the establishment."
+
+#: templates/create_menu.html:13
+msgid "Créer un Menu"
+msgstr "Create a Menu"
+
+#: templates/create_menu.html:17
+msgid "Nom du Menu:"
+msgstr "Menu Name:"
+
+#: templates/create_menu.html:21
+msgid "Type de Repas:"
+msgstr "Meal Type:"
+
+#: templates/create_menu.html:23 templates/manage_meals.html:27
+#: templates/meal_report.html:24
+msgid "Petit-déjeuner"
+msgstr "Breakfast"
+
+#: templates/create_menu.html:24 templates/manage_meals.html:28
+#: templates/meal_report.html:29
+msgid "Déjeuner"
+msgstr "Lunch"
+
+#: templates/create_menu.html:25 templates/manage_meals.html:29
+#: templates/meal_report.html:34
+msgid "Goûter"
+msgstr "Snack"
+
+#: templates/create_menu.html:29
+msgid "Plat:"
+msgstr "Dish:"
+
+#: templates/create_menu.html:32
+msgid "Créer le Menu"
+msgstr "Create Menu"
+
+#: templates/directrice_dashboard.html:6 templates/parents_dashboard.html:7
+msgid "Director Dashboard"
+msgstr "Director Dashboard"
+
+#: templates/directrice_dashboard.html:16
+#: templates/directrice_dashboard.html:18
+msgid "Create Menu"
+msgstr "Create Menu"
+
+#: templates/directrice_dashboard.html:17
+msgid "Plan meals and manage menus."
+msgstr "Plan meals and manage menus."
+
+#: templates/directrice_dashboard.html:23
+#: templates/directrice_dashboard.html:25 templates/parents_dashboard.html:11
+#: templates/parents_dashboard.html:13
+msgid "View Attendance"
+msgstr "View Attendance"
+
+#: templates/directrice_dashboard.html:24
+msgid "Review attendance records for all users."
+msgstr "Review attendance records for all users."
+
+#: templates/educatrices_dashboard.html:6
+msgid "Educatrice Dashboard"
+msgstr "Educator Dashboard"
+
+#: templates/educatrices_dashboard.html:10
+#: templates/educatrices_dashboard.html:12
+msgid "Plan Activities"
+msgstr "Plan Activities"
+
+#: templates/educatrices_dashboard.html:11
+msgid "Schedule and plan activities for children."
+msgstr "Schedule and plan activities for children."
+
+#: templates/educatrices_dashboard.html:16
+#: templates/educatrices_dashboard.html:18
+msgid "Manage Attendance"
+msgstr "Manage Attendance"
+
+#: templates/educatrices_dashboard.html:17 templates/parents_dashboard.html:12
+msgid "Track attendance and child activity reports."
+msgstr "Track attendance and child activity reports."
+
+#: templates/login.html:27 templates/manage_accounts.html:16
+msgid "Username:"
+msgstr "Username:"
+
+#: templates/login.html:30
+msgid "Password:"
+msgstr "Password:"
+
+#: templates/login.html:36
+msgid "Don't have an account?"
+msgstr "Don't have an account?"
+
+#: templates/login.html:36
+msgid "Sign up"
+msgstr "Sign up"
+
+#: templates/login.html:37
+msgid "Forgot password?"
+msgstr "Forgot password?"
+
+#: templates/manage_accounts.html:8
+msgid "Gestion des Comptes"
+msgstr "Account Management"
+
+#: templates/manage_accounts.html:12
+msgid "Créer un Compte"
+msgstr "Create an Account"
+
+#: templates/manage_accounts.html:20
+msgid "Email:"
+msgstr "Email:"
+
+#: templates/manage_accounts.html:24
+msgid "User type:"
+msgstr "User type:"
+
+#: templates/manage_accounts.html:28
+msgid "First name:"
+msgstr "First name:"
+
+#: templates/manage_accounts.html:32
+msgid "Last name:"
+msgstr "Last name:"
+
+#: templates/manage_accounts.html:36
+msgid "Date of birth:"
+msgstr "Date of birth:"
+
+#: templates/manage_accounts.html:39
+msgid "Save Account"
+msgstr "Save Account"
+
+#: templates/manage_accounts.html:45
+msgid "Rechercher un Utilisateur"
+msgstr "Search for a User"
+
+#: templates/manage_accounts.html:48 templates/search_accounts.html:11
+msgid "Rechercher"
+msgstr "Search"
+
+#: templates/manage_accounts.html:53
+msgid "Liste des Comptes"
+msgstr "List of Accounts"
+
+#: templates/manage_accounts.html:58
+msgid "Modifier"
+msgstr "Edit"
+
+#: templates/manage_accounts.html:59
+msgid "Supprimer"
+msgstr "Delete"
+
+#: templates/manage_accounts.html:62
+msgid "Aucun compte disponible."
+msgstr "No accounts available."
+
+#: templates/manage_meals.html:8
+msgid "Gestion des Repas"
+msgstr "Meal Management"
+
+#: templates/manage_meals.html:12
+msgid "Sélectionner les Plats pour le Repas"
+msgstr "Select Dishes for the Meal"
+
+#: templates/manage_meals.html:16
+msgid "Choisir un Menu:"
+msgstr "Choose a Menu:"
+
+#: templates/manage_meals.html:18
+msgid "Menu 1"
+msgstr "Menu 1"
+
+#: templates/manage_meals.html:19
+msgid "Menu 2"
+msgstr "Menu 2"
+
+#: templates/manage_meals.html:20
+msgid "Menu 3"
+msgstr "Menu 3"
+
+#: templates/manage_meals.html:25
+msgid "Sélectionner le Repas:"
+msgstr "Select the Meal:"
+
+#: templates/manage_meals.html:34
+msgid "Choisir les Plats:"
+msgstr "Choose the Dishes:"
+
+#: templates/manage_meals.html:36
+msgid "Plat 1"
+msgstr "Dish 1"
+
+#: templates/manage_meals.html:37
+msgid "Plat 2"
+msgstr "Dish 2"
+
+#: templates/manage_meals.html:38
+msgid "Plat 3"
+msgstr "Dish 3"
+
+#: templates/manage_meals.html:41
+msgid "Sélectionner les Plats"
+msgstr "Select Dishes"
+
+#: templates/mark_attendance.html:10
+msgid "Select Users:"
+msgstr "Select Users:"
+
+#: templates/meal_report.html:8 templates/meal_report.html:12
+msgid "Rapport des Repas"
+msgstr "Meal Report"
+
+#: templates/meal_report.html:9
+msgid "Voici les repas sélectionnés pour chaque jour de la semaine."
+msgstr "Here are the selected meals for each day of the week."
+
+#: templates/meal_report.html:16
+msgid "Jour"
+msgstr "Day"
+
+#: templates/meal_report.html:17
+msgid "Repas"
+msgstr "Meal"
+
+#: templates/meal_report.html:18
+msgid "Plats"
+msgstr "Dishes"
+
+#: templates/meal_report.html:23
+msgid "Lundi"
+msgstr "Monday"
+
+#: templates/meal_report.html:25
+msgid "Plat 1, Plat 2"
+msgstr "Dish 1, Dish 2"
+
+#: templates/meal_report.html:28
+msgid "Mardi"
+msgstr "Tuesday"
+
+#: templates/meal_report.html:30
+msgid "Plat 3, Plat 4"
+msgstr "Dish 3, Dish 4"
+
+#: templates/meal_report.html:33
+msgid "Mercredi"
+msgstr "Wednesday"
+
+#: templates/meal_report.html:35
+msgid "Plat 5, Plat 6"
+msgstr "Dish 5, Dish 6"
+
+#: templates/password_reset_complete.html:4
+msgid "Password Reset Complete"
+msgstr "Password Reset Complete"
+
+#: templates/password_reset_complete.html:5
+msgid "Your password has been changed."
+msgstr "Your password has been changed."
+
+#: templates/password_reset_complete.html:5
+msgid "Log in"
+msgstr "Log in"
+
+#: templates/password_reset_confirm.html:4
+msgid "Enter New Password"
+msgstr "Enter New Password"
+
+#: templates/password_reset_confirm.html:8
+msgid "Change Password"
+msgstr "Change Password"
+
+#: templates/password_reset_done.html:4
+msgid "Password Reset Email Sent"
+msgstr "Password Reset Email Sent"
+
+#: templates/password_reset_done.html:5
+msgid "Check your email for instructions to reset your password."
+msgstr "Check your email for instructions to reset your password."
+
+#: templates/password_reset_email.html:4
+msgid "Hi,"
+msgstr "Hi,"
+
+#: templates/password_reset_email.html:5
+msgid "Click the link below to reset your password:"
+msgstr "Click the link below to reset your password:"
+
+#: templates/password_reset_email.html:7 templates/password_reset_form.html:4
+#: templates/password_reset_form.html:8
+msgid "Reset Password"
+msgstr "Reset Password"
+
+#: templates/password_reset_email.html:8
+msgid "If you didn’t request this, ignore this email."
+msgstr "If you didn’t request this, ignore this email."
+
+#: templates/search_accounts.html:7
+msgid "Recherche des Comptes"
+msgstr "Account Search"
+
+#: templates/search_accounts.html:19
+msgid "Edit"
+msgstr "Edit"
+
+#: templates/search_accounts.html:20
+msgid "Delete"
+msgstr "Delete"
+
+#: templates/search_accounts.html:25
+msgid "No accounts found."
+msgstr "No accounts found."
+
+#: templates/signup.html:31
+msgid "Directrice"
+msgstr "Director"
+
+#: templates/signup.html:32
+msgid "Assistante Pédagogique"
+msgstr "Teaching Assistant"
+
+#: templates/signup.html:33
+msgid "Educatrice"
+msgstr "Educator"
+
+#: templates/signup.html:34
+msgid "Parent"
+msgstr "Parent"
+
+#: templates/signup.html:40
+msgid "Already have an account?"
+msgstr "Already have an account?"
+
+#: templates/view_attendance.html:6
+msgid "Attendance Records"
+msgstr "Attendance Records"
+
+#: templates/view_attendance.html:10
+msgid "User"
+msgstr "User"
+
+#: templates/view_attendance.html:11
+msgid "Date"
+msgstr "Date"
+
+#: templates/view_attendance.html:12
+msgid "Presence Status"
+msgstr "Presence Status"
+
+#: templates/welcome.html:5
+msgid "Welcome to my website"
+msgstr "Welcome to my website"
+
+#: templates/welcome.html:8
+msgid "Welcome to ChildCare Management"
+msgstr "Welcome to ChildCare Management"
+
+#: templates/welcome.html:9
+msgid ""
+"Helping parents and staff manage childcare easily. Get started by signing up "
+"or logging in!"
+msgstr ""
+"Helping parents and staff manage childcare easily. Get started by signing up "
+"or logging in!"
+
+#: templates/welcome.html:10
+msgid "Get Started"
+msgstr "Get Started"
+
+#: templates/welcome.html:11
+msgid "Already a member?"
+msgstr "Already a member?"

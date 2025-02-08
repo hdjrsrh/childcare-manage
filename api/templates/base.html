@@ -1,0 +1,65 @@
+<!-- childcare/api/templates/base.html -->
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Childcare Management" %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-left">
+            <li><a href="{% url 'welcome' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" style="height: 40px;"></a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}"><i class="fas fa-user"></i> </a></li>
+                <li>
+                    <a href="#" onclick="confirmLogout(event)">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </li>
+                                    
+            {% else %}
+                <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
+                <li><a href="{% url 'signup' %}">{% trans "Sign Up" %}</a></li>
+            {% endif %}
+        </ul>
+
+        <!-- Language Switcher -->
+        <div class="srh">
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.path }}" />
+                <select name="language" onchange="this.form.submit()">
+                    <option value="en" {% if request.LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                    <option value="fr" {% if request.LANGUAGE_CODE == 'fr' %}selected{% endif %}>Français</option>
+                </select>
+            </form>
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+<script>
+    function confirmLogout(event) {
+        event.preventDefault(); // Empêche la navigation immédiate
+
+        if (confirm("Voulez-vous vraiment vous déconnecter ?")) {
+            window.location.href = "{% url 'logout' %}"; // Redirige vers la déconnexion
+        }
+    }
+</script>
+
+</html>

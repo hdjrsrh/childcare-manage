@@ -1,0 +1,26 @@
+<!-- childcare/api/templates/welcome.html -->
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}  <!-- Add this line here -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="welcome-container">
+    <h1>{% trans "Welcome to {{ site.name }}" %}</h1>
+    <p>Visit us at: {{ site.domain }}</p>
+    <p>{% trans "Helping parents and staff manage childcare easily. Get started by signing up or logging in!" %}</p>
+    <a href="{% url 'signup' %}" class="btn">{% trans "Get Started" %}</a>
+    <p>{% trans "Already a member?" %} <a href="{% url 'login' %}">{% trans "Login" %}</a></p>
+</div>
+</body>
+</html>
+{% endblock %}
+

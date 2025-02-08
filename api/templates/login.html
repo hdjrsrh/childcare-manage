@@ -1,0 +1,51 @@
+<!-- childcare/api/templates/login.html -->
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}  <!-- Add this line here -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/authentification.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="auth-container">
+    <div class="auth-left">
+        <img src="{% static 'images/logo.png' %}" alt="ChildCare Logo">
+    </div>
+    <div class="auth-right">
+        <h2>{% trans "Login" %}</h2>
+
+        <!-- Display messages here -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="username">{% trans "Username:" %}</label>
+            <input type="text" name="username" required>
+            
+            <label for="password">{% trans "Password:" %}</label>
+            <input type="password" name="password" required>
+            
+            <button type="submit">{% trans "Login" %}</button>
+        </form>
+        
+        <p>{% trans "Don't have an account?" %} <a href="{% url 'signup' %}">{% trans "Sign up" %}</a></p>
+        <p><a href="{% url 'password_reset' %}">{% trans "Forgot password?" %}</a></p>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

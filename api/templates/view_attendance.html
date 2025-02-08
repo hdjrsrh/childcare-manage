@@ -1,0 +1,38 @@
+<!-- childcare/api/templates/view_attendance.html -->
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/attendance.css' %}">
+</head>
+<body>
+    <div class="attendance-container">
+        <h2>{% trans "Attendance Records" %}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>{% trans "User" %}</th>
+                    <th>{% trans "Date" %}</th>
+                    <th>{% trans "Present" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                    <tr>
+                        <td>{{ record.user.username }}</td>
+                        <td>{{ record.date }}</td>
+                        <td>{% if record.present %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+{% endblock %}

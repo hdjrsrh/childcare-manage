@@ -1,0 +1,80 @@
+<!-- childcare/api/templates/confirm_delete.html -->
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 50%;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .form-section {
+        margin-top: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        color: white;
+        background: #e74c3c;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #c0392b;
+    }
+
+    .btn-secondary {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background: #6c757d;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    .btn-secondary:hover {
+        background: #545b62;
+    }
+</style>
+
+<div class="container">
+    <h1>{% trans "Confirmer la Suppression" %}</h1>
+
+    <p>{% trans "Voulez-vous vraiment supprimer le compte de" %} {{ account.username }} ?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">{% trans "Confirmer la Suppression" %}</button>
+    </form>
+
+    <a href="{% url 'manage_accounts' %}" class="btn-secondary">{% trans "Annuler" %}</a>
+</div>
+{% endblock %}
+

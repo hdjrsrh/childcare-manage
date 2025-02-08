@@ -1,0 +1,104 @@
+/* childcare/api/static/css/edit_acc.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"], input[type="email"] {
+    height: 40px;
+}
+
+/* Buttons */
+button, .btn-secondary {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    button, .btn-secondary {
+        width: 100%;
+    }
+}

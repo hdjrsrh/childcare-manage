@@ -1,0 +1,145 @@
+/* childcare/api/static/css/profile.css */
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-card, .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.profile-card:hover, .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card h2, .card-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-card p, .card-description {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-description {
+    font-style: italic;
+}
+
+.card a, .profile-card a {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover, .profile-card a:hover {
+    background-color: #2980b9;
+}
+
+.card i {
+    font-size: 30px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card i {
+    font-size: 40px;
+}
+
+@media (min-width: 768px) {
+    .profile-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .profile-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+/* Profile Edit Page */
+.profile-edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: #f4f7fc;
+    min-height: 100vh;
+}
+
+.profile-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-edit-form h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-edit-form .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+
+}
+
+.profile-edit-form .form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile-edit-form .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.profile-edit-form .form-group input:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}
+
+
+.profile-edit-form input[disabled] {
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+}

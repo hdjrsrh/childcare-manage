@@ -1,0 +1,46 @@
+<!-- childcare/api/templates/search_accounts.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% load i18n %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/search_acc.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<h1>{% trans "Recherche des Comptes" %}</h1>
+
+<!-- Search Form -->
+<form class="search-form" method="GET">
+    <input type="text" name="q" value="{{ query }}" placeholder="Rechercher un utilisateur">
+    <button type="submit">{% trans "Rechercher" %}</button>
+</form>
+
+<!-- Account List -->
+{% if accounts %}
+    <div class="account-list">
+        <ul>
+            {% for account in accounts %}
+                <li>
+                    <span>{{ account.username }} - {{ account.user_type }}</span>
+                    <div>
+                        <a href="{% url 'edit_accounts' account.id %}">{% trans "Edit" %}</a>
+                        <a href="{% url 'delete_account' account.id %}">{% trans "Delete" %}</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    <p>{% trans "No accounts found." %}</p>
+{% endif %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,43 @@
+/* childcare/api/static/css/repas.css */
+.meal-selection-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.meal-selection-section h2 {
+    color: #ff4d4d;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Rapport des repas */
+.meal-report-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.meal-report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.meal-report-table th,
+.meal-report-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.meal-report-table th {
+    background-color: #ffcc00;
+}
+
+.meal-report-table td {
+    background-color: #fff;
+}

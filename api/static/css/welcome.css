@@ -1,0 +1,18 @@
+/* childcare/api/static/css/welcome.css */
+.welcome-container {
+    text-align: center;
+    padding: 60px;
+    background: url("../images/kids-bg.jpg") no-repeat center center / cover;
+    color: #ffffff;
+}
+
+.welcome-container h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-container p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}

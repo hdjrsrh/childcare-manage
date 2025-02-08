@@ -1,0 +1,111 @@
+<!-- childcare/api/templates/manage_accounts.html -->
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/manage_acc.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function toggleForm() {
+            var selectedRole = document.getElementById("role").value;
+            document.querySelectorAll(".role-specific").forEach(el => el.style.display = "none");
+            if (selectedRole) {
+                document.getElementById("form_" + selectedRole).style.display = "block";
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleForm();  // Make sure to call toggleForm when the page loads
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>{% trans "Gestion des Comptes" %}</h1>
+    
+        <!-- Account Form Section -->
+        <div class="form-section">
+            <h2>{% trans "Créer un Compte" %}</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="{{ form.username.id_for_label }}">{% trans "Nom d'utilisateur:" %}</label>
+                        {{ form.username }}
+                    </div>
+                </div>
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="{{ form.email.id_for_label }}">{% trans "Email:" %}</label>
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="role">{% trans "Rôle:" %}</label>
+                        <select id="role" name="role" onchange="toggleForm()" required>
+                            <option value="">{% trans "Sélectionnez votre rôle" %}</option>
+                            <option value="educatrice" {% if form.role.value == 'educatrice' %}selected{% endif %}>{% trans "Éducatrice" %}</option>
+                            <option value="assistante" {% if form.role.value == 'assistante' %}selected{% endif %}>{% trans "Assistante" %}</option>
+                            <option value="parent" {% if form.role.value == 'parent' %}selected{% endif %}>{% trans "Parent" %}</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Role-specific fields -->
+                <div id="form_educatrice" class="role-specific" style="display:none;">
+                    <input type="text" name="adresse" placeholder="Adresse" {% if form.adresse.value %}value="{{ form.adresse.value }}"{% endif %} required>
+                    <input type="text" name="diplome" placeholder="Diplôme" {% if form.diplome.value %}value="{{ form.diplome.value }}"{% endif %} required>
+                    <label>Télécharger les documents:</label>
+                    <input type="file" name="documents" accept=".pdf,.docx,.jpg,.png" multiple>
+                </div>
+                <div id="form_assistante" class="role-specific" style="display:none;">
+                    <input type="text" name="adresse" placeholder="Adresse" {% if form.adresse.value %}value="{{ form.adresse.value }}"{% endif %} required>
+                    <input type="text" name="diplome" placeholder="Diplôme" {% if form.diplome.value %}value="{{ form.diplome.value }}"{% endif %} required>
+                    <label>Télécharger les documents:</label>
+                    <input type="file" name="documents" accept=".pdf,.docx,.jpg,.png" multiple>
+                </div>
+                <div id="form_parent" class="role-specific" style="display:none;">
+                    <input type="text" name="child_name" placeholder="Nom de l'enfant" {% if form.child_name.value %}value="{{ form.child_name.value }}"{% endif %} required>
+                    <input type="number" name="child_age" placeholder="Âge de l'enfant" {% if form.child_age.value %}value="{{ form.child_age.value }}"{% endif %} required>
+                    <input type="file" name="proof_of_identity" accept=".pdf,.docx,.jpg,.png" multiple>
+                </div>
+                
+                <button type="submit" class="btn">{% trans "Enregistrer le compte" %}</button>
+            </form>
+        </div>
+    
+        <!-- Search Section -->
+        <div class="search-section">
+            <h2>{% trans "Rechercher un Utilisateur" %}</h2>
+            <form method="GET" action="{% url 'search_accounts' %}">
+                <input type="text" name="q" placeholder="{% trans 'Rechercher un utilisateur' %}" value="{{ query }}">
+                <button type="submit" class="btn search-btn">{% trans "Rechercher" %}</button>
+            </form>
+        </div>
+    
+        <!-- Accounts List -->
+        <h2>{% trans "Liste des Comptes" %}</h2>
+        <ul class="account-list">
+            {% for account in accounts %}
+                <li class="account-item">
+                    <span>{{ account.username }} - {{ account.role }}</span>
+                    <div class="account-actions">
+                        <a href="{% url 'edit_accounts' account.id %}" class="edit-btn">{% trans "Modifier" %}</a>
+                        <a href="{% url 'delete_account' account.id %}" class="delete-btn">{% trans "Supprimer" %}</a> 
+                    </div>
+                </li>
+            {% empty %}
+                <p class="no-account">{% trans "Aucun compte disponible." %}</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+{% endblock %}

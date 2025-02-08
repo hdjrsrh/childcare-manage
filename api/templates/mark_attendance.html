@@ -1,0 +1,41 @@
+<!-- childcare/api/templates/mark_attendance.html -->
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/attendance.css' %}">
+</head>
+<body>
+    <div class="attendance-container">
+        <h2>{% trans "Mark Attendance" %}</h2>
+        <form method="POST" action="{% url 'mark_attendance' %}">
+            {% csrf_token %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>{% trans "User" %}</th>
+                        <th>{% trans "Present" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td><input type="checkbox" name="users" value="{{ user.id }}"></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit">{% trans "Save Attendance" %}</button>
+
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

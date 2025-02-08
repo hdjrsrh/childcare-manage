@@ -1,0 +1,111 @@
+<!-- childcare/api/templates/profile.html-->
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}  <!-- Add this line here -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="profile-container">
+    <!-- User Profile Card -->
+    <div class="profile-card">
+        <h2>{% trans "Welcome," %} {{ user.first_name }} {{ user.last_name }}</h2>        
+        <p><strong>{% trans "Email:" %}</strong> {{ user.email }}</p>
+        <p><strong>{% trans "Role:" %}</strong> {{ user.role }}</p>  <!-- Display the role -->
+        <a href="{% url 'edit_profile' %}" class="btn">{% trans "Edit Profile" %}</a>
+    </div>
+
+    <!-- Display Manage Accounts Card Only for Admins -->
+    {% if is_admin %}
+    <div class="card">
+        <i class="fas fa-users"></i>
+        <div class="card-title">{% trans "Manage Accounts" %}</div>
+        <div class="card-description">{% trans "Manage user accounts, roles, and permissions." %}</div>
+        <a href="{% url 'manage_accounts' %}" class="btn">{% trans "Go to Accounts" %}</a>
+    </div>
+    {% endif %}
+    
+    <!-- Display Settings Card for All Users -->
+    <div class="card">
+        <i class="fas fa-cogs"></i>
+        <div class="card-title">{% trans "Settings" %}</div>
+        <div class="card-description">{% trans "Configure your account settings." %}</div>
+        <a href="{% url 'settings' %}" class="btn">{% trans "Go to Settings" %}</a>
+    </div>
+
+    <!-- Display a Special Card for Specific Roles -->
+    {% if is_educatrice %}
+    <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <div class="card-title">{% trans "Plan Activities" %}</div>
+        <div class="card-description">{% trans "Schedule and plan activities for children." %}</div>
+        <a href="{% url 'plan_activities' %}">{% trans "Plan Activities" %}</a>
+    </div>
+    <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <div class="card-title">{% trans "Manage Attendance" %}</div>
+        <div class="card-description">{% trans "Track attendance and child activity reports." %}</div>
+        <a href="{% url 'view_attendance' %}">{% trans "Manage Attendance" %}</a>
+    </div>
+    {% endif %}
+
+    {% if is_assistante_pedagogique %}
+    <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <div class="card-title">{% trans "Mark Attendance" %}</div>
+        <div class="card-description">{% trans "Record attendance for children and staff." %}</div>
+        <a href="{% url 'mark_attendance' %}">{% trans "Mark Attendance" %}</a>
+    </div>
+    {% endif %}
+
+    {% if is_parent %}
+    <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <div class="card-title">{% trans "View Attendance" %}</div>
+        <div class="card-description">{% trans "Review attendance records for all users." %}</div>
+        <a href="{% url 'view_attendance' %}">{% trans "View Attendance" %}</a>
+    </div>
+    <h3>{% trans "Children" %}</h3>
+    <ul>
+        {% for child in user.children.all %}
+            <li>{{ child.first_name }} {{ child.last_name }} ({{ child.birth_date }})</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_child' %}">{% trans "Add Child" %}</a>
+    {% endif %}
+
+
+    {% if is_directrice %}
+    <div class="card">
+        <i class="fas fa-users"></i>
+        <div class="card-title">{% trans "Manage Accounts" %}</div>
+        <div class="card-description">{% trans "Manage user accounts, roles, and permissions." %}</div>
+        <a href="{% url 'manage_accounts' %}">{% trans "Go to Accounts" %}</a>
+    </div>
+    <div class="card">
+        <i class="fas fa-utensils"></i>
+        <div class="card-title">{% trans "Create Menu" %}</div>
+        <div class="card-description">{% trans "Plan meals and manage menus." %}</div>
+        <a href="{% url 'manage_accounts' %}">{% trans "Create Menu" %}</a>
+    </div>
+    
+    <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <div class="card-title">{% trans "View Attendance" %}</div>
+        <div class="card-description">{% trans "Review attendance records for all users." %}</div>
+        <a href="{% url 'view_attendance' %}">{% trans "View Attendance" %}</a>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
+{% endblock %}
